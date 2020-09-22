@@ -1,0 +1,25 @@
+COMMON: &common
+  DEBUG: False
+  SECRET_KEY: insecure
+  TESTING: False
+  THREADED: False
+  LOGGING_CONFIG_PATH: ./config/logging.yaml
+  LOGGING_PATH: ./logs
+
+DEVELOPMENT: &development
+  <<: *common
+  DEBUG: True
+  ENV:  dev
+
+STAGING: &staging
+  <<: *common
+  SECRET_KEY: sortasecure
+
+PRODUCTION: &production
+  <<: *common
+  SECRET_KEY: mdd1
+
+TESTING: &testing
+  <<: *common
+  ENV: test
+  TESTING: True
