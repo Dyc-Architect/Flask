@@ -26,7 +26,6 @@ def create_app(config_name=None, config_path=None):
         # 日志设置
     with open(app.config['LOGGING_CONFIG_PATH'], 'r', encoding='utf-8') as f:
         dict_conf = yaml.safe_load(f.read())
-    print(dict_conf)
     logging.config.dictConfig(dict_conf)  # 载入日志配置
     return app
 
